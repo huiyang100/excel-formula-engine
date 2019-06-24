@@ -3,15 +3,15 @@
 
 # 一、背景介绍
 
-小到几个人的团队，大到上万人的公司，都开不开薪资到计算。
-而薪资通常有考核制度决定，考核制度变化频繁，
+小到几个人的团队，大到上万人的公司，都开不开薪资的计算。
+而薪资通常由考核制度组成，且变化频繁。
 在这种情况下财务人员依据考核制度采用excel公式来完成薪资的计算是一件非常低效的事情。
 
- `excel-formula-engine` 的产生就是为了解决这个问题。
+ `excel-formula-engine` 的产生就是为了解决这个问题,让薪资计算支持excel公式配置，无需硬编码动态调整。
 
 
 
- `excel-formula-engine`事实上是对阿里`QLExpress`脚本引擎语法函数的扩展:
+ `excel-formula-engine`是对阿里`QLExpress`脚本引擎语法函数的扩展:
  
  建议使用之前先对[QLExpress](https://github.com/alibaba/QLExpress) 做一个了解。
 # 二、依赖和调用说明
