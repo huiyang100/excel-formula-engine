@@ -18,9 +18,9 @@
 
 ```xml
 <dependency>
-  <groupId>com.alibaba</groupId>
-  <artifactId>QLExpress</artifactId>
-  <version>3.2.0</version>
+  <groupId>com.github.chengzh100</groupId>
+  <artifactId>excel-module</artifactId>
+  <version>1.0</version>
 </dependency>
 ```
 

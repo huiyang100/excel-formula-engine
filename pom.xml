@@ -30,7 +30,7 @@
         </dependency>
     </dependencies>
 
-    !-- 开发人员信息 -->
+    <!-- 开发人员信息 -->
     <developers>
         <developer>
             <name>chengzh100</name>
@@ -57,6 +57,16 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.2</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
             </plugin>
 
 
