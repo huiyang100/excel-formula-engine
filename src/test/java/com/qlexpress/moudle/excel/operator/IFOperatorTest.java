@@ -30,7 +30,6 @@ public class IFOperatorTest {
         DefaultContext<String, Object> expressContext = new DefaultContext<String, Object>();
         ExpressRunner runner = new ExpressRunner(false, true);
         runner.addFunction("IF", new IFOperator());
-
         String expresses = "IF(score >=100,'满分',IF(score>=80,'优秀','不够优秀'))";
         expressContext.put("score", 80);
         Object result = runner.execute(expresses, expressContext, null, false, true);

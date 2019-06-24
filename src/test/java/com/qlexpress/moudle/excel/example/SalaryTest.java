@@ -49,13 +49,8 @@ public class SalaryTest {
         expressMap.put("事假扣除", "基本工资/应出勤天数*事假");
         expressMap.put("病假扣除", "基本工资/应出勤天数*病假*0.4");
 
-
         expressMap.put("应发工资", "基本工资+岗位补贴+绩效奖金+税前补差-事假扣除+空调补助");
-
-
         expressMap.entrySet().stream().forEach(en -> {
-
-
             try {
                 Object value = runner.execute(en.getValue(), expressContext, null, false, false);
                 System.out.println("薪资项:" + en.getKey() + ":==>" + value);
