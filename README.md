@@ -52,7 +52,7 @@
          expressContext.put("姓名", "程增辉");
          expressContext.put("姓名", "信息技术");
          expressContext.put("职位", "研发");
-         expressContext.put("级别", "P2");
+         expressContext.put("级别", "P1");
          expressContext.put("工号", "123456");
          expressContext.put("基本工资", new BigDecimal(10000));
          expressContext.put("岗位补贴", new BigDecimal(1000));
@@ -67,11 +67,11 @@
  
          Map<String, String> expressMap = new LinkedHashMap();
          expressMap.put("空调补助", "IF(OR(月份==6,月份==7),1200,0)");
-         expressMap.put("绩效奖金", "IF(级别=='P1',5000,10000)");
+         expressMap.put("绩效系数", "IF(AND(职位=='研发',级别=='P2'),1,0.8)");
+         expressMap.put("绩效奖金", "IF(级别=='P1',5000*绩效系数,10000*绩效系数)");
          expressMap.put("事假扣除", "基本工资/应出勤天数*事假");
          expressMap.put("病假扣除", "基本工资/应出勤天数*病假*0.4");
- 
-         expressMap.put("应发工资", "基本工资+岗位补贴+绩效奖金+税前补差-事假扣除+空调补助");
+         expressMap.put("应发工资", "ROUND(基本工资+岗位补贴+绩效奖金+税前补差-事假扣除+空调补助,2)");
          expressMap.entrySet().stream().forEach(en -> {
              try {
                  Object value = runner.execute(en.getValue(), expressContext, null, false, false);
@@ -88,15 +88,17 @@
      }
  
  }
+
  
  ```
  结果:
  ```text
- 薪资项:空调补助:==>1200
- 薪资项:绩效奖金:==>10000
- 薪资项:事假扣除:==>434.7826086957
- 薪资项:病假扣除:==>347.82608695656
- 薪资项:应发工资:==>21865.2173913043
+薪资项:空调补助:==>1200
+薪资项:绩效系数:==>0.8
+薪资项:绩效奖金:==>4000.0
+薪资项:事假扣除:==>434.7826086957
+薪资项:病假扣除:==>347.82608695656
+薪资项:应发工资:==>15865.22
  ```
 
 
