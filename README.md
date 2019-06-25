@@ -48,7 +48,6 @@
          DefaultContext<String, Object> expressContext = new DefaultContext<String, Object>();
          ExpressRunner runner = new ExpressRunner(true, true);
          QLExpressExcelMoudle.registerModule(runner);
- 
          expressContext.put("姓名", "程增辉");
          expressContext.put("姓名", "信息技术");
          expressContext.put("职位", "研发");
@@ -58,13 +57,9 @@
          expressContext.put("岗位补贴", new BigDecimal(1000));
          expressContext.put("税前补差", new BigDecimal(100));
          expressContext.put("事假", 1);
- 
          expressContext.put("病假", 2);
- 
          expressContext.put("应出勤天数", 23);
          expressContext.put("月份", 7);
- 
- 
          Map<String, String> expressMap = new LinkedHashMap();
          expressMap.put("空调补助", "IF(OR(月份==6,月份==7),1200,0)");
          expressMap.put("绩效系数", "IF(AND(职位=='研发',级别=='P2'),1,0.8)");
