@@ -20,7 +20,7 @@
                 <dependency>
 			<groupId>com.github.chengzh100</groupId>
 			<artifactId>excel-module</artifactId>
-			<version>1.0.0.RELEASE</version>
+			<version>1.0.2.RELEASE</version>
 		</dependency>
 ```
 

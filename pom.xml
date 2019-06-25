@@ -6,7 +6,7 @@
 
     <groupId>com.github.chengzh100</groupId>
     <artifactId>excel-module</artifactId>
-    <version>1.0.0.RELEASE</version>
+    <version>1.0.2.RELEASE</version>
     <name>excel-formula-engine</name>
     <description>一个excel公式解析执行引擎。</description>
     <url>example.com</url>
@@ -160,6 +160,20 @@
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.2</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
 
